@@ -5,44 +5,41 @@ class SpinningDots extends HTMLElement{
         const width = 28
         const circles = 8
         const circleRadius = 2
-        const root = this.attachShadow({mode:'open'})
+        const root = this.attachShadow({mode: 'open'})
         root.innerHTML = `<div>
             ${this.buildStyle(width)}
-            ${this.buildCircle(w, circles, circleRadius)}
         </div>`
     }
-
     /**
-     * Construit un SVG contenant nos différents cercles
-     * @param {number} w Largeur du SVG
-     * @param {number} n Nombre de cercle
-     * @param {number} r Rayon de chaque cercle
+     * 
+     * @param {number} w largeur de la div 
      */
-    buildCircle(w,n,r)
-    {
-
+    buildStyle(w){
+        return `<style>
+                div{
+                    width: ${w}px;
+                    height: ${w}px;
+                    background: red;
+                }
+            </style>`
     }
-
+    
+    /**${this.buildCircle(w, circles, circleRadius)} */
+    
     /**
      * Construit le style de notre loader
      * @param {number} w Largeur de l'élément
      * @returns {string}
      */
-    buildStyle(w)
-    {
-        return `
-        <style>
-            :host {
-                display: inline-blocl;
-            }
-            div{
-                height: ${w}px;
-                width: ${w}px;
-                background: red;
-            }
-        </style>`
-    }
-
+    // buildStyle(w){
+    //     return `<style>
+    //         div{
+    //             height: 40px;
+    //             width: 40px;
+    //             background: red;
+    //         }
+    //     </style>`
+    // }
 }
 
 try
